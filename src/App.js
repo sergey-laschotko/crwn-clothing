@@ -1,5 +1,4 @@
 import React from "react";
-import "./App.scss";
 import { Switch, Route, Redirect } from "react-router-dom";
 import { connect } from "react-redux";
 import { createStructuredSelector } from "reselect";
@@ -13,6 +12,8 @@ import CheckoutPage from "./pages/checkout/checkout.component";
 import SignInAndSignUpPage from "./pages/sign-in-and-sign-up/sign-in-and-sign-up.component";
 
 import Header from "./components/header/header.component";
+
+import { AppContainer } from "./App.styles";
 
 class App extends React.Component {
   unsubscribeFromAuth = null;
@@ -42,7 +43,7 @@ class App extends React.Component {
 
   render() {
     return (
-      <div className="app">
+      <AppContainer>
         <Header />
         <Switch>
           <Route exact path="/" component={Homepage} />
@@ -60,7 +61,7 @@ class App extends React.Component {
             }
           />
         </Switch>
-      </div>
+      </AppContainer>
     );
   }
 }
